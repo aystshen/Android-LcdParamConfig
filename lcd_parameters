@@ -1,0 +1,92 @@
+# ---------------------------
+# Description:
+# The first line of the "#" is a comment, the comment is just to explain how to use it.
+# Does not have any other features, can be ignored.
+#
+# Configuration format is as follows:
+#
+# Name = Value;
+#
+# Note: The end of the line must end with ";"
+# ---------------------------
+
+
+# ---------------------------
+# General parameters
+# ---------------------------
+# Screen rotation angle, 0 | 90 | 180 | 270
+orientation = 0;
+
+# Screen density, 120 | 160 | 240 | 320
+density = 120;
+
+
+# ---------------------------
+# Lcd interface type
+# 0: mipi | 1: eDP | 2: lvds
+# ---------------------------
+panel-type = 2;
+
+
+# ---------------------------
+# Whether to initialize the screen in uboot
+# 0: Initialize in uboot | 1: Initialize only in kernel
+# ---------------------------
+uboot-init = 1;
+
+
+# ---------------------------
+# No need to modify
+# ---------------------------
+unprepare-delay-ms = 100;
+enable-delay-ms = 100;
+disable-delay-ms = 100;
+prepare-delay-ms = 100;
+reset-delay-ms = 100;
+init-delay-ms = 100;
+width-mm = 100;
+height-mm = 100;
+
+
+# ---------------------------
+# panel timing
+# ---------------------------
+clock-frequency = 152000000;    # clock
+hactive = 1920;                 # width
+vactive = 1080;                 # height
+hback-porch = 192;              # hbp
+hfront-porch = 48;              # hfp
+vback-porch = 71;               # vbp
+vfront-porch = 3;               # vfp
+hsync-len = 32;                 # hs
+vsync-len = 6;                  # vs
+hsync-active = 0;
+vsync-active = 0;
+de-active = 0;
+pixelclk-active = 0;
+
+
+# ---------------------------
+# for lvds panel
+# ---------------------------
+# 0：MEDIA_BUS_FMT_RGB565_1X16 | 1：MEDIA_BUS_FMT_RGB666_1X18 | 2：MEDIA_BUS_FMT_RGB888_1X24 | 3：MEDIA_BUS_FMT_ARGB8888_1X32
+lvds,format = 2;
+
+# Lvds data format, 0：vesa 1: jeida
+lvds,mode = 0;
+
+# Lvds data width, 18 | 24
+lvds,width = 24;
+
+# Single or dual lvds, 0：Single | 1：Dual
+lvds,channel = 1;
+
+
+# ---------------------------
+# for mipi panel
+# ---------------------------
+#dsi,lane-rate = 500
+#dsi,flags = 0;
+#dsi,format = 0;
+#dsi,lanes = 4;
+#panel-init-sequence = 29 00 06 14 01 08 00 00 00 ff aa 01 02 03 04 05 06 07 ff aa AA bb ff;
